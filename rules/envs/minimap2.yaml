@@ -1,0 +1,13 @@
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - minimap2 =2.26
+  - racon =1.5.0
+  - medaka =1.11.3
+  - seqkit =2.6.1
+  - seqtk =1.4
+  - filtlong =0.2.1
+  - samtools =1.14
+  - biopython =1.84
+  - pandas = 2.2.2

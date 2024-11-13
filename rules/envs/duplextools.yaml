@@ -1,0 +1,6 @@
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - duplex-tools =0.2.17
+  - pyfastx  =0.8.4

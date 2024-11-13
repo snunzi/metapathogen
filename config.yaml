@@ -1,0 +1,25 @@
+#Set kits
+barcode_kit: SQK-PBK004
+
+#Set Database
+database: reference_database
+
+#Parameters
+maxlength: chopper_maxrl
+minlength: chopper_minrl
+minqual: chopper_qual
+
+#Get the sample sheet
+samples:  samples.tsv
+R1_extension: extension_R1_user
+directory_name: dir_name
+
+#Reference Databases
+phytophthora_v7: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta
+phytoplasma_v1: /home/shared_docs/databases/phytoplasma_metabarcode/iphyclas/phytoplasma_16s_database.fasta
+phytoplasma_v2: /home/shared_docs/databases/phytoplasma_metabarcode/josedb/phytoplasma_16s_jf.fasta
+
+snakefile_dir:  "/home/PPCDL-bioinf/files/pipelines/minion_metabarcode"
+
+email:
+  email: user_email

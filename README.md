@@ -47,7 +47,7 @@ Reads in ".fastq.gz" format must be uploaded to the server following directions 
 
 # Results Analyses
 
-a. Description of DADA2 output and interpretation
+a. Description of output and interpretation
 
 	1.	readqc_summary.html
 

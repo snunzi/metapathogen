@@ -13,9 +13,8 @@ The purpose of this pipeline is for the analysis amplicon sequencing of marker g
 	1. Read quality assessment
 		1. Read quality before and after filtering (['nanoplot'](https://github.com/wdecoster/NanoPlot))
 	2. Read trimming and filtering
-		1. Split chimeric reads (['duplex_tools'](https://github.com/nanoporetech/duplex-tools))
-		2. Remove adapters([`porechop`](https://github.com/rrwick/Porechop)) 
-		3. Length and quality filter (['chopper'](https://github.com/wdecoster/chopper))
+		1. Remove adapters([`porechop`](https://github.com/rrwick/Porechop)) 
+		2. Length and quality filter (['chopper'](https://github.com/wdecoster/chopper))
 2. Read clustering
 	1. Cluster reads by shared kmer with reference database ([`seal.sh`](https://github.com/BioInfoTools/BBMap/blob/master/sh/seal.sh))
 	2. BP cutoff for making consensus sequence (['filtlong'](https://github.com/rrwick/Filtlong))

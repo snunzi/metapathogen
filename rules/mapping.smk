@@ -1,7 +1,8 @@
 
 rule map_reads_database:
 	input:
-		fastq_clean = "demultiplexed/{barcode}_clean.fastq.gz"
+		fastq_clean = "demultiplexed/{barcode}_clean.fastq.gz",
+		db = "log/bwa_db_done.txt" if config["create_db"]=="create" else []
 	params:
 		database = config[config['database']]
 	output:
@@ -20,7 +21,7 @@ rule map_reads_database:
 
 rule count_mapped_reads:
 	input:
-		mapping = "mapping/{barcode}.sam"
+		mapping = "mapping/{barcode}.sam",
 	output:
 		mapping_stats = "mapping/{barcode}.txt",
 		read_count = "mapping/{barcode}_summary.txt"
@@ -41,16 +42,20 @@ rule summarize_read_mapping:
 		mapping_stats = expand("mapping/{barcode}.txt", barcode=barcodes),
 		blast = "summary_output/blastn_summary.csv",
 		blast_unfiltered = "summary_output/blastn_summary_unfiltered.csv",
+		read_count = expand("mapping/{barcode}_raw_reads.txt", barcode=barcodes)
+	params:
+		read_count_all = "mapping/count_all_reads.txt"
 	output:
 		summary_file = "summary_output/{run_name}_mapping_summary.xlsx"
 	conda:
 		"envs/biopy.yaml"
 	shell:
 		"""
-		python {config[snakefile_dir]}/scripts/summarize.py {output} {input.blast} {input.blast_unfiltered} {input.mapping_stats}
-		rm -r mapping
-		rm -r demultiplexed
+		cat {input.read_count} > {params.read_count_all}
+		python {config[snakefile_dir]}/scripts/summarize.py {output} {input.blast} {input.blast_unfiltered} {params.read_count_all} {input.mapping_stats}
+		#rm -r mapping
+		#rm -r demultiplexed
 		#rm -r ref_consensus_seq
-		rm {input.blast}
-		rm {input.blast_unfiltered}
+		#rm {input.blast}
+		#rm {input.blast_unfiltered}
 		"""

@@ -5,7 +5,8 @@ rule trim_barcodes:
 	input:
 		reads = expand("data/{{barcode}}{exten}", exten=config['R1_extension']),
 	output:
-		fastq = "demultiplexed/{barcode}_raw.fastq.gz"
+		fastq = "demultiplexed/{barcode}_raw.fastq.gz",
+		read_count = "mapping/{barcode}_raw_reads.txt"
 	message:
 		"""Concatenating reads from {wildcards.barcode}."""
 	conda:
@@ -14,6 +15,7 @@ rule trim_barcodes:
 	shell:
 		"""
 		porechop --discard_middle -i {input.reads} -o {output.fastq} --threads {threads}
+		printf "%s\t%s\n" {wildcards.barcode} \ $(echo $(zcat {input.reads}|wc -l)/4|bc) > {output.read_count}
 		"""
 
 rule nanoplot_minion_raw:

@@ -1,18 +1,30 @@
-#Set kits
-barcode_kit: SQK-PBK004
+#########################
+####Edit This Section####
+#########################
 
-#Set Database
-database: reference_database
-
-#Parameters
+database: reference_database 
 maxlength: chopper_maxrl
 minlength: chopper_minrl
 minqual: chopper_qual
+R1_extension: extension_R1_user
+directory_name: dir_name 
+create_db: create
+ref_cov_cutoff: 50
+pident_cutoff: 95
+mismatch_cutoff: 11
+con_len_cutoff: 1600
+scaffold: scaffold
+
+#########################
+#########################
+
+#Set kits
+barcode_kit: SQK-PBK004
 
 #Get the sample sheet
 samples:  samples.tsv
-R1_extension: extension_R1_user
-directory_name: dir_name
+
+
 
 #Reference Databases
 phytophthora_v7: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta

@@ -33,6 +33,17 @@ rule all:
 		#expand("summary_output/{run_name}_readqc_report.html", run_name=directory_name),
 		expand("summary_output/{run_name}_mapping_summary.xlsx", run_name=directory_name)
 
+'''
+onsuccess:
+        print("Workflow finished, no error")
+        shell("mail -s 'VirusDetection workflow finished, no error' {config[email][email]} < {log}")
+
+onerror:
+        print("An error occurred")
+        shell("mail -s 'VirusDetection workflow error occurred' {config[email][email]} < {log}")
+'''
+
+
 ##### load rules #####
 include: "rules/QC_trim.smk"
 include: "rules/mapping.smk"

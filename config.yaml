@@ -8,12 +8,12 @@ minlength: chopper_minrl
 minqual: chopper_qual
 R1_extension: extension_R1_user
 directory_name: dir_name 
-create_db: create
+create_db: dont #create or dont
 ref_cov_cutoff: 50
 pident_cutoff: 95
 mismatch_cutoff: 11
 con_len_cutoff: 1600
-scaffold: scaffold
+scaffold: dont #scaffold or dont
 
 #########################
 #########################
@@ -27,9 +27,9 @@ samples:  samples.tsv
 
 
 #Reference Databases
-phytophthora_v7: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta
-phytoplasma_v1: /home/shared_docs/databases/phytoplasma_metabarcode/iphyclas/phytoplasma_16s_database.fasta
-phytoplasma_v2: /home/shared_docs/databases/phytoplasma_metabarcode/josedb/phytoplasma_16s_jf.fasta
+phytophthora: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta
+phytoplasma: /home/shared_docs/databases/phytoplasma_metabarcode/Phpl_DB_99.5.fasta
+
 
 snakefile_dir:  "/home/PPCDL-bioinf/files/pipelines/minion_metabarcode"
 

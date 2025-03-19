@@ -1,5 +1,5 @@
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
 dependencies:
-  - nanoplot =1.41.6
+  - nanoplot =1.44.1

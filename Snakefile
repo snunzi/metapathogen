@@ -49,5 +49,5 @@ onerror:
 ##### load rules #####
 include: "rules/QC_trim.smk"
 include: "rules/mapping.smk"
-include: "rules/consensus_seq_cluster_blased.smk"
+include: "rules/consensus_seq_cluster_based.smk"
 include: "rules/create_db.smk"

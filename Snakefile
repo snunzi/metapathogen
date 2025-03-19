@@ -28,9 +28,11 @@ else:
 							for this in filenames]
 
 #Run rules
+localrules: all, align_ref_clusters, format_noscaffold_consensus_seqs, blast_consensus_seqs, summarize_blast_output, count_mapped_reads, blastn_excel_summary, blastn_excel_summary_all, summarize_read_mapping
+
 rule all:
 	input:
-		#expand("summary_output/{run_name}_readqc_report.html", run_name=directory_name),
+		expand("summary_output/{run_name}_readqc_report.html", run_name=directory_name),
 		expand("summary_output/{run_name}_mapping_summary.xlsx", run_name=directory_name)
 
 '''

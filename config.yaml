@@ -18,19 +18,14 @@ scaffold: dont #scaffold or dont
 #########################
 #########################
 
-#Set kits
-barcode_kit: SQK-PBK004
-
 #Get the sample sheet
 samples:  samples.tsv
-
-
 
 #Reference Databases
 phytophthora: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta
 phytoplasma: /home/shared_docs/databases/phytoplasma_metabarcode/Phpl_DB_99.5.fasta
 
-
+#Location of pipeline code
 snakefile_dir:  "/home/PPCDL-bioinf/files/pipelines/minion_metabarcode"
 
 email:

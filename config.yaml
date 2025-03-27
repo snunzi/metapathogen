@@ -6,13 +6,13 @@ database: reference_database
 maxlength: chopper_maxrl
 minlength: chopper_minrl
 minqual: chopper_qual
-R1_extension: extension_R1_user
+R1_extension: .fastq.gz
 directory_name: dir_name 
 create_db: dont #create or dont
-ref_cov_cutoff: 50
-pident_cutoff: 95
+ref_cov_cutoff: consensus_ref_cov
+pident_cutoff: consensus_pident
 mismatch_cutoff: 11
-con_len_cutoff: 1600
+con_len_cutoff: consensus_length
 scaffold: dont #scaffold or dont
 
 #########################
@@ -22,8 +22,8 @@ scaffold: dont #scaffold or dont
 samples:  samples.tsv
 
 #Reference Databases
-phytophthora: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta
-phytoplasma: /home/shared_docs/databases/phytoplasma_metabarcode/Phpl_DB_99.5.fasta
+phytophthora_v7: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta
+phytoplasma_16s_v1: /home/shared_docs/databases/phytoplasma_metabarcode/Phpl_DB_99.5.fasta
 
 #Location of pipeline code
 snakefile_dir:  "/home/PPCDL-bioinf/files/pipelines/minion_metabarcode"

@@ -53,9 +53,9 @@ rule summarize_read_mapping:
 		"""
 		cat {input.read_count} > {params.read_count_all}
 		python {config[snakefile_dir]}/scripts/summarize.py {output} {input.blast} {input.blast_unfiltered} {params.read_count_all} {input.mapping_stats}
-		#rm -r mapping
-		#rm -r demultiplexed
-		#rm -r ref_consensus_seq
-		#rm {input.blast}
-		#rm {input.blast_unfiltered}
+		rm -r mapping
+		rm -r demultiplexed
+		rm -r ref_consensus_seq
+		rm {input.blast}
+		rm {input.blast_unfiltered}
 		"""

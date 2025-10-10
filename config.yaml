@@ -13,7 +13,7 @@ ref_cov_cutoff: consensus_ref_cov
 pident_cutoff: consensus_pident
 mismatch_cutoff: 11
 con_len_cutoff: consensus_length
-scaffold: dont #scaffold or dont
+scaffold: scaffold_option #scaffold or dont
 
 #########################
 #########################
@@ -24,6 +24,7 @@ samples:  samples.tsv
 #Reference Databases
 phytophthora_v7: /home/shared_docs/databases/phytophthora_metabarcode/phytophthora_ITS_COI_DB_v7.fasta
 phytoplasma_16s_v1: /home/shared_docs/databases/phytoplasma_metabarcode/Phpl_DB_99.5.fasta
+phytoplasma_tuf_v1: /home/shared_docs/databases/phytoplasma_metabarcode/Phpl_tuf_DB.fasta
 
 #Location of pipeline code
 snakefile_dir:  "/home/PPCDL-bioinf/files/pipelines/minion_metabarcode"
